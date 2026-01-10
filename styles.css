@@ -243,6 +243,18 @@ nav a:hover {
   display: none;
 }
 
+.form-note {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  margin-top: 16px;
+}
+
+.form-success {
+  color: var(--color-accent);
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
 /* Footer */
 footer {
   text-align: center;
