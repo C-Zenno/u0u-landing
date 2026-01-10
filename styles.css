@@ -29,7 +29,7 @@ body {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -43,16 +43,10 @@ header {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--color-accent);
-}
-
-nav {
-  display: flex;
-  gap: 32px;
-  align-items: center;
+  color: var(--color-text);
 }
 
 nav a {
@@ -76,14 +70,14 @@ nav a:hover {
 /* Hero */
 .hero {
   text-align: center;
-  padding: 100px 0 80px;
+  padding: 80px 0 60px;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   line-height: 1.1;
 }
 
@@ -97,8 +91,15 @@ nav a:hover {
 .tagline {
   font-size: 1.25rem;
   color: var(--color-text-muted);
-  max-width: 500px;
-  margin: 0 auto 40px;
+  max-width: 480px;
+  margin: 0 auto 16px;
+}
+
+.clarification {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  opacity: 0.7;
+  margin-bottom: 32px;
 }
 
 /* Buttons */
@@ -121,101 +122,79 @@ nav a:hover {
   transform: translateY(-1px);
 }
 
-/* Features */
-.features {
-  padding: 80px 0;
-}
-
-.features h2 {
+/* What it does */
+.what-it-does {
+  padding: 60px 0;
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 60px;
+}
+
+.what-it-does h2 {
+  font-size: 1.5rem;
   font-weight: 600;
+  margin-bottom: 32px;
+  color: var(--color-text);
 }
 
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+.benefits {
+  list-style: none;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-.feature {
+.benefits li {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  padding: 12px 0;
+  padding-left: 28px;
+  position: relative;
+}
+
+.benefits li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* Trust */
+.trust {
+  text-align: center;
+  padding: 40px 32px;
   background: var(--color-surface);
-  padding: 32px;
   border-radius: 16px;
+  margin: 20px 0 60px;
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.feature-icon {
-  width: 48px;
-  height: 48px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1.25rem;
-  margin-bottom: 20px;
-}
-
-.feature h3 {
-  font-size: 1.25rem;
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-
-.feature p {
+.trust p {
   color: var(--color-text-muted);
   font-size: 0.95rem;
-}
-
-/* Privacy */
-.privacy {
-  text-align: center;
-  padding: 60px 40px;
-  background: var(--color-surface);
-  border-radius: 20px;
-  margin: 40px 0;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.privacy h2 {
-  font-size: 1.75rem;
-  margin-bottom: 16px;
-  font-weight: 600;
-}
-
-.privacy p {
-  color: var(--color-text-muted);
-  max-width: 600px;
-  margin: 0 auto;
+  line-height: 1.8;
 }
 
 /* Waitlist */
 .waitlist {
   text-align: center;
-  padding: 80px 0 100px;
+  padding: 60px 0 80px;
 }
 
 .waitlist h2 {
-  font-size: 2rem;
-  margin-bottom: 16px;
-  font-weight: 600;
-}
-
-.waitlist > p {
-  color: var(--color-text-muted);
+  font-size: 1.75rem;
   margin-bottom: 32px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  font-weight: 600;
 }
 
 .form-group {
   display: flex;
   gap: 12px;
-  max-width: 440px;
+  max-width: 420px;
   margin: 0 auto;
 }
 
@@ -249,12 +228,6 @@ nav a:hover {
   margin-top: 16px;
 }
 
-.form-success {
-  color: var(--color-accent);
-  font-size: 1rem;
-  margin-top: 8px;
-}
-
 /* Footer */
 footer {
   text-align: center;
@@ -271,12 +244,8 @@ footer {
     gap: 20px;
   }
 
-  nav {
-    gap: 20px;
-  }
-
   .hero {
-    padding: 60px 0;
+    padding: 60px 0 40px;
   }
 
   .form-group {
