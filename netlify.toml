@@ -1,12 +1,8 @@
 [build]
   publish = "."
 
-# Redirect form submissions to success page
+# Pretty URLs
 [[redirects]]
   from = "/success"
   to = "/success.html"
   status = 200
-
-# Form settings
-[build.processing.html]
-  pretty_urls = true
