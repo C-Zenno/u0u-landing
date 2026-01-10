@@ -76,7 +76,14 @@ nav a:hover {
 /* Hero */
 .hero {
   text-align: center;
-  padding: 100px 0 80px;
+  padding: 60px 0 80px;
+}
+
+.hero-banner {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 24px;
 }
 
 .hero h1 {
