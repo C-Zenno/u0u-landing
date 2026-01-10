@@ -7,12 +7,12 @@
 
 :root {
   /* U0U BaseLine Brand Palette
-   * Background: #0f0c17 (banner-matched) | #0B0D12 (alt) | #000 (pure black)
+   * Background:  0d0a1b,#100a17, #0f0a18, #100919, #100b19 #100a16 #0e0918(canonical - banner matched)
    * Electric blue: #4DA3FF
    * Indigo/violet: #6A5CFF
    */
-  --color-bg: #0f0c17;
-  --color-surface: #17141f;
+  --color-bg: #100c19;
+  --color-surface: #161224;
   --color-text: #e4e4e7;
   --color-text-muted: #71717a;
   --color-primary: #6A5CFF;
@@ -84,11 +84,21 @@ nav a:hover {
   padding: 60px 0 80px;
 }
 
+.hero-banner-card {
+  background: #100c19;
+  display: inline-block;
+  margin-bottom: 32px;
+  border: 3px solid rgba(26, 26, 31, 0.6);
+  border-radius: 12px;
+  padding: 4px;
+}
+
 .hero-banner {
   max-width: 600px;
   width: 100%;
   height: auto;
-  margin-bottom: 32px;
+  display: block;
+  border-radius: 12px;
 }
 
 .hero h1 {
