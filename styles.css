@@ -6,13 +6,18 @@
 }
 
 :root {
-  --color-bg: #0f1318;
-  --color-surface: #171c22;
+  /* U0U BaseLine Brand Palette
+   * Background: #0f0c17 (banner-matched) | #0B0D12 (alt) | #000 (pure black)
+   * Electric blue: #4DA3FF
+   * Indigo/violet: #6A5CFF
+   */
+  --color-bg: #0f0c17;
+  --color-surface: #17141f;
   --color-text: #e4e4e7;
   --color-text-muted: #71717a;
-  --color-primary: #6366f1;
-  --color-primary-hover: #818cf8;
-  --color-accent: #22d3ee;
+  --color-primary: #6A5CFF;
+  --color-primary-hover: #7d71ff;
+  --color-accent: #4DA3FF;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
