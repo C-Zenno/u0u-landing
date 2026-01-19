@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPN-0 | Baseline Doctrine Whitepaper</title>
+    <meta name="description" content="Baseline Doctrine Whitepaper. Adaptation without optimization is possible.">
+    <meta property="og:title" content="Baseline Doctrine Whitepaper | BPN-0">
+    <meta property="og:description" content="Baseline is an observer-only doctrine. Adaptation without optimization is possible.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="Images/Logo_header_800.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="180x180" href="Images/favicon-180.png">
+    <link rel="apple-touch-icon" href="Images/favicon-180.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: #e0e0e0;
+            background-color: #0a0a0f;
+        }
+        
+        .header-banner {
+            background-color: #1a1a24;
+            border-bottom: 3px solid #2d2d3d;
+            padding: 32px 24px;
+            text-align: center;
+        }
+        
+        .header-banner img {
+            max-width: 200px;
+            height: auto;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+        
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        
+        .doc-meta {
+            background-color: #12121a;
+            border: 1px solid #2d2d3d;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+        }
+        
+        .doc-meta p {
+            margin-bottom: 6px;
+            color: #a0a0b0;
+        }
+        
+        .doc-meta strong {
+            color: #c0c0d0;
+        }
+        
+        .doc-meta .scope-note {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #2d2d3d;
+            font-style: italic;
+            color: #9090a0;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #2d2d3d;
+            margin: 48px 0;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            margin-top: 48px;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: #c0c0d0;
+        }
+        
+        .core-claim {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+        
+        .categorical-boundary {
+            font-weight: 600;
+            color: #a78bfa;
+            font-size: 1.05rem;
+        }
+        
+        .tagline-internal {
+            font-style: italic;
+            color: #a0a0b0;
+        }
+        
+        ul {
+            margin-bottom: 20px;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #b0b0c0;
+        }
+        
+        .rejection-list {
+            columns: 2;
+            column-gap: 32px;
+        }
+        
+        @media (max-width: 600px) {
+            .rejection-list {
+                columns: 1;
+            }
+        }
+        
+        .doc-control {
+            background-color: #12121a;
+            border: 1px solid #2d2d3d;
+            border-radius: 8px;
+            padding: 24px;
+            margin-top: 48px;
+        }
+        
+        .doc-control h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        
+        .doc-control table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .doc-control td {
+            padding: 8px 0;
+            border-bottom: 1px solid #1d1d2d;
+            font-size: 0.9rem;
+        }
+        
+        .doc-control td:first-child {
+            color: #808090;
+            width: 140px;
+        }
+        
+        .doc-control td:last-child {
+            color: #c0c0d0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 1px solid #2d2d3d;
+        }
+        
+        .footer .tagline {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #a78bfa;
+            margin-bottom: 24px;
+        }
+        
+        .footer .series {
+            font-size: 0.85rem;
+            color: #606070;
+        }
+        
+        .footer .copyright {
+            font-size: 0.8rem;
+            color: #505060;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        <a href="index.html"><img src="Images/Logo_header_800.png" alt="Baseline Logo" style="max-width: 280px;"></a>
+    </div>
+    
+    <div class="container">
+        <h1>Baseline Doctrine Whitepaper</h1>
+        
+        <div class="doc-meta">
+            <p><strong>Designation:</strong> Program Note (Baseline track)</p>
+            <p><strong>Document ID:</strong> BPN-0</p>
+            <p><strong>Status:</strong> Canonical</p>
+            <p><strong>Layer:</strong> Doctrine (upstream of Patents)</p>
+            <p class="scope-note">This note defines admissible representation and categorical refusals for observer-only scaffolding. It does not define implementation, deployment, or use.</p>
+        </div>
+        
+        <hr>
+        
+        <h2>1. Introduction: The Optimization Assumption</h2>
+        
+        <p>Most adaptive systems are built on an implicit premise: adaptation requires optimization. The system must define a target, measure deviation, and tune behavior toward an improved outcome.</p>
+        
+        <p>This premise is treated as structural necessity. It is not.</p>
+        
+        <p>Optimization is a specific class of operation: it selects, ranks, and steers trajectories toward preferred states under an objective. Adaptation is not structurally bound to that class. Adaptation can exist as a non-steering operation: reconfiguring representation without selecting outcomes.</p>
+        
+        <p>This document is doctrine-layer. It defines admissible representation and categorical refusals. It does not define implementation, deployment, or use.</p>
+        
+        <p>The central claim of this paper is narrow and defensible:</p>
+        
+        <p class="core-claim">Adaptation without optimization is possible.</p>
+        
+        <p>The remaining sections define what exists within Baseline, what is admissible to compute, and what is explicitly refused.</p>
+        
+        <hr>
+        
+        <h2>2. Baselines as Reference States</h2>
+        
+        <p>A baseline is a reference state derived from observation under constraint.</p>
+        
+        <p>A baseline is defined over signals. It is not defined over intentions, motives, identities, or desired outcomes.</p>
+        
+        <p>Baselines exist to provide comparability. They establish what a stream resembles when it is not being acted upon by the system.</p>
+        
+        <p>Baselines are not forecasts.</p>
+        <p>Baselines are not goals.</p>
+        <p>Baselines are not targets.</p>
+        <p>Baselines are not a definition of "correct" behavior.</p>
+        <p>Baselines are not an instruction to return.</p>
+        <p>Baselines are not a standard of improvement.</p>
+        <p>Baselines are not a template for a person.</p>
+        
+        <p>A baseline is a boundary object: it allows independent systems to name deviation without inheriting authority to interpret meaning or assign value.</p>
+        
+        <p>In Baseline, a reference state is admissible only if it is representationally bounded and observationally grounded. If a reference state requires interpretive authority, it is refused.</p>
+        
+        <hr>
+        
+        <h2>3. Behavior Under Constraint</h2>
+        
+        <p>Baseline treats behavior as a stream of observable variation under finite resolution.</p>
+        
+        <p>Behavior, in this doctrine, means only what can be expressed as admissible signal: timing, frequency, recurrence, intensity, duration, sequence, and bounded change over time.</p>
+        
+        <p>Behavior is processed as structure.</p>
+        <p>Behavior is not processed as intent.</p>
+        <p>Behavior is not processed as identity.</p>
+        <p>Behavior is not processed as psychology.</p>
+        <p>Behavior is not processed as preference.</p>
+        <p>Behavior is not processed as a proxy for character, compliance, risk, or worth.</p>
+        
+        <p>The admissible unit is the signal event and its bounded context. The inadmissible unit is the person as an inferred model.</p>
+        
+        <p>Baseline therefore draws a categorical boundary:</p>
+        
+        <p class="categorical-boundary">Behavior is admissible. Identity is not.</p>
+        
+        <p>This boundary is not a preference. It is a structural refusal. It defines what Baseline is allowed to represent.</p>
+        
+        <p>Any transformation that requires identity-level inference is out of scope by definition.</p>
+        
+        <p>Any transformation that attempts to convert behavior into a stable profile is out of scope by definition.</p>
+        
+        <hr>
+        
+        <h2>4. Adaptation Without Optimization</h2>
+        
+        <p>Baseline defines adaptation as structural scaffolding applied to presentation, routing, and representation of the same observed content.</p>
+        
+        <p>In this doctrine, "adaptation" names an admissible transformation class. It does not assert that Baseline performs transformations, nor does it prescribe when or how any system should do so.</p>
+        
+        <p>Adaptation is permitted only when it does not introduce an objective, a target state, or a steering signal.</p>
+        
+        <p>Adaptation is not permitted to select outcomes.</p>
+        <p>Adaptation is not permitted to rank preferred behaviors.</p>
+        <p>Adaptation is not permitted to tune the user.</p>
+        <p>Adaptation is not permitted to shape the user.</p>
+        <p>Adaptation is not permitted to measure "improvement."</p>
+        
+        <p>Scaffolding is limited to representation formats and metadata that do not alter content, rank outcomes, or condition user decisions.</p>
+        
+        <p>The permitted transformation class is representational:</p>
+        
+        <ul>
+            <li>reparameterization without objective functions</li>
+            <li>reformatting without preference ordering</li>
+            <li>recontextualization without value assignment</li>
+            <li>resegmentation without goal selection</li>
+            <li>rescaling without optimization criteria</li>
+        </ul>
+        
+        <p>Adaptation in Baseline is therefore defined by invariance:</p>
+        
+        <p class="core-claim">Same content. Different scaffolding.</p>
+        
+        <p>If a proposed adaptation changes content, inserts recommendations, prioritizes an outcome, or attempts to steer decisions, it exits the definition and is refused.</p>
+        
+        <hr>
+        
+        <h2>5. Observer Posture</h2>
+        
+        <p>Baseline distinguishes observation from influence by authority.</p>
+        
+        <p>Observation is the act of measuring, indexing, and representing signals under explicit limits.</p>
+        
+        <p>Influence is any act that asserts what should happen next, or that conditions the environment to cause a preferred outcome.</p>
+        
+        <p>Baseline has no authority to influence.</p>
+        
+        <p>Baseline does not intervene.</p>
+        <p>Baseline does not instruct.</p>
+        <p>Baseline does not recommend.</p>
+        <p>Baseline does not prescribe.</p>
+        <p>Baseline does not optimize.</p>
+        <p>Baseline does not attempt to produce improvement.</p>
+        
+        <p>Baseline is not permitted to translate observation into action-selection, whether directly or indirectly.</p>
+        
+        <p>The posture is ordered:</p>
+        
+        <p class="tagline-internal">We observe before we adapt.</p>
+        
+        <p>If adaptation exists in a downstream system, it is downstream of observation and remains scaffolding-only.</p>
+        
+        <p>In this document, refusal is definitional: it marks operations as out of scope. No enforcement mechanism is described or implied.</p>
+        
+        <p>Observation is admissible only as representation. Adaptation is admissible only as scaffolding. Nothing in Baseline is permitted to cross from scaffolding into steering.</p>
+        
+        <p>If a system component depends on user compliance to validate itself, it is not observer-only. It is refused.</p>
+        
+        <p>If a system component relies on feedback to tune what it outputs toward a preferred effect, it is not non-optimizing. It is refused.</p>
+        
+        <p>If a system component claims to change outcomes, it is not non-authoritative. It is refused.</p>
+        
+        <hr>
+        
+        <h2>6. Explicit Rejections</h2>
+        
+        <p>Baseline explicitly does not perform the following:</p>
+        
+        <ul class="rejection-list">
+            <li>No personalization</li>
+            <li>No user profiling</li>
+            <li>No identity inference</li>
+            <li>No psychology inference</li>
+            <li>No intent inference</li>
+            <li>No preference modeling</li>
+            <li>No learning styles</li>
+            <li>No coaching</li>
+            <li>No motivational framing</li>
+            <li>No behavioral nudging</li>
+            <li>No habit formation logic</li>
+            <li>No persuasion mechanisms</li>
+            <li>No goal selection</li>
+            <li>No goal tracking</li>
+            <li>No progress scoring</li>
+            <li>No optimization metrics</li>
+            <li>No outcome tuning</li>
+            <li>No recommendation systems</li>
+            <li>No intervention language</li>
+            <li>No improvement claims</li>
+            <li>No effectiveness claims</li>
+            <li>No predictive claims</li>
+            <li>No risk scoring</li>
+            <li>No compliance scoring</li>
+            <li>No automated decision-making</li>
+            <li>No automated actions</li>
+            <li>No adaptive control loops</li>
+            <li>No reinforcement logic</li>
+            <li>No reward shaping</li>
+            <li>No penalty shaping</li>
+            <li>No attempts to change the user</li>
+        </ul>
+        
+        <p>Baseline also explicitly does not claim the following:</p>
+        
+        <ul>
+            <li>That adaptation will improve outcomes</li>
+            <li>That adaptation will increase performance</li>
+            <li>That adaptation will produce well-being</li>
+            <li>That adaptation will change behavior</li>
+            <li>That adaptation will reduce risk</li>
+            <li>That adaptation will prevent failure</li>
+        </ul>
+        
+        <p>Baseline is defined to remain valid even when no positive claims can be made.</p>
+        
+        <hr>
+        
+        <h2>7. Implications</h2>
+        
+        <p>A system defined by this doctrine can represent behavioral structure without asserting meaning.</p>
+        
+        <p>It can create stable reference states without converting them into targets.</p>
+        
+        <p>It can alter scaffolding without introducing objectives.</p>
+        
+        <p>It can detect difference without declaring direction.</p>
+        
+        <p>It can describe constraint without prescribing correction.</p>
+        
+        <p>It can support auditing because the forbidden classes are categorical, not contextual.</p>
+        
+        <p>This framework forbids any operation that requires a notion of "better."</p>
+        
+        <p>It forbids any operation that requires a notion of "should."</p>
+        
+        <p>It forbids any operation that requires a stable model of a person.</p>
+        
+        <p>It forbids any operation that depends on outcome manipulation to justify its existence.</p>
+        
+        <p>The allowed space is narrow by design. The narrowness is the defense.</p>
+        
+        <p>If a future reader must determine whether a downstream system exceeded its authority under this doctrine, they do not need access to intent. They need only check whether the boundary from representation to steering was crossed.</p>
+        
+        <hr>
+        
+        <h2>8. Closing</h2>
+        
+        <p>Baseline is an observer-only doctrine.</p>
+        
+        <p>It defines baselines as reference states, not predictions.</p>
+        
+        <p>It treats behavior as admissible and refuses identity as out of scope.</p>
+        
+        <p>It defines adaptation as structural scaffolding and refuses optimization as a category error.</p>
+        
+        <p class="core-claim">Adaptation without optimization is possible.</p>
+        
+        <p>Anything that requires steering is not Baseline.</p>
+        
+        <div class="doc-control">
+            <h3>Document Control</h3>
+            <table>
+                <tr>
+                    <td>Document ID</td>
+                    <td>BPN-0</td>
+                </tr>
+                <tr>
+                    <td>Track</td>
+                    <td>Baseline (parallel doctrinal track)</td>
+                </tr>
+                <tr>
+                    <td>Layer</td>
+                    <td>Doctrine</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>Canonical</td>
+                </tr>
+                <tr>
+                    <td>Scope</td>
+                    <td>Admissible representation; categorical refusals</td>
+                </tr>
+                <tr>
+                    <td>Refuses</td>
+                    <td>Steering, optimization, identity inference, outcome claims</td>
+                </tr>
+                <tr>
+                    <td>Publication</td>
+                    <td>Website, internal reference</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="footer">
+            <p class="tagline">We adapt to you — without optimizing you.</p>
+            <p class="series">Baseline Program Note Series — BPN-0</p>
+            <p class="copyright">© Compressed Consciousness Laboratory / ZOA Industries</p>
+        </div>
+    </div>
+</body>
+</html>
