@@ -1,231 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baseline | Adaptation Without Optimization</title>
-    <meta name="description" content="Baseline is an observer-only doctrine for adaptive systems. We adapt to you — without optimizing you.">
-    <meta property="og:title" content="Baseline | Adaptation Without Optimization">
-    <meta property="og:description" content="Baseline is an observer-only doctrine for adaptive systems. We adapt to you — without optimizing you.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="Images/Logo_header_800.png">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="180x180" href="Images/favicon-180.png">
-    <link rel="apple-touch-icon" href="Images/favicon-180.png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.7;
-            color: #e0e0e0;
-            background-color: #0a0a0f;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .header {
-            padding: 24px;
-            display: flex;
-            justify-content: center;
-            border-bottom: 1px solid #1d1d2d;
-        }
-
-        .header img {
-            max-width: 280px;
-            height: auto;
-        }
-
-        .hero {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 48px 24px;
-            text-align: center;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .hero .tagline {
-            font-size: 1.35rem;
-            font-style: italic;
-            color: #a78bfa;
-            margin-bottom: 40px;
-        }
-
-        .hero .description {
-            font-size: 1.1rem;
-            color: #a0a0b0;
-            margin-bottom: 48px;
-            line-height: 1.8;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .cta {
-            display: inline-block;
-            padding: 14px 32px;
-            font-size: 1rem;
-            font-weight: 500;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-        }
-
-        .cta-primary {
-            background-color: #a78bfa;
-            color: #0a0a0f;
-        }
-
-        .cta-primary:hover {
-            background-color: #c4b5fd;
-        }
-
-        .cta-secondary {
-            background-color: transparent;
-            color: #a78bfa;
-            border: 1px solid #a78bfa;
-        }
-
-        .cta-secondary:hover {
-            background-color: #a78bfa15;
-        }
-
-        .principles {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 64px 24px;
-            border-top: 1px solid #1d1d2d;
-        }
-
-        .principles h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-
-        .principle-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-        }
-
-        .principle {
-            background-color: #12121a;
-            border: 1px solid #2d2d3d;
-            border-radius: 8px;
-            padding: 24px;
-        }
-
-        .principle h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #a78bfa;
-            margin-bottom: 8px;
-        }
-
-        .principle p {
-            font-size: 0.9rem;
-            color: #a0a0b0;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 32px 24px;
-            border-top: 1px solid #1d1d2d;
-        }
-
-        .footer p {
-            font-size: 0.85rem;
-            color: #606070;
-        }
-
-        .footer a {
-            color: #a78bfa;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero .tagline {
-                font-size: 1.1rem;
-            }
-            .cta-group {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U0U BaseLine - We Adapt to You</title>
+  <link rel="icon" type="image/png" href="assets/U0U_Baseline_64x64.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <img src="Images/Logo_header_800.png" alt="Baseline">
+  <div class="container">
+    <header>
+      <div class="logo">U0U BaseLine</div>
+      <nav>
+        <a href="#how-it-works">How it works</a>
+        <a href="whitepaper.html">Whitepaper</a>
+        <a href="#waitlist" class="btn-nav">Join Waitlist</a>
+      </nav>
     </header>
 
-    <main class="hero">
-        <h1>Baseline</h1>
-        <p class="tagline">We adapt to you — without optimizing you.</p>
-        <p class="description">
-            Baseline is an observer-only doctrine for adaptive systems. It defines adaptation as structural scaffolding — representation without steering, observation without influence.
-        </p>
-        <div class="cta-group">
-            <a href="whitepaper.html" class="cta cta-primary">Read the Whitepaper</a>
-            <a href="https://compressedconsciousness.org" class="cta cta-secondary">Constraint Program</a>
+    <main>
+      <section class="hero">
+        <div class="hero-banner-card">
+          <img src="assets/U0U_Banner_1536x1025.png" alt="We adapt to you" class="hero-banner">
         </div>
+        <p class="tagline">Your baseline is personal. We learn it and adapt with you.</p>
+        <p class="clarification">Not medical. Not optimization hype. Just adaptation to your personal baseline.</p>
+        <a href="#waitlist" class="btn-primary">Join Waitlist</a>
+      </section>
+
+      <section id="how-it-works" class="features">
+        <h2>How it works</h2>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">1</div>
+            <h3>Learn your baseline</h3>
+            <p>We observe your natural rhythm over time — without forcing change or targets.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">2</div>
+            <h3>Adapt gently</h3>
+            <p>Insights adjust to you, not the other way around. No pressure. No one-size-fits-all advice.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">3</div>
+            <h3>Support daily life</h3>
+            <p>Works across stress, recovery, and everyday routines — quietly in the background.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust">
+        <p>Built to adapt without surveillance or pressure.<br>Your data stays yours. Participation is optional.</p>
+      </section>
+
+      <section id="waitlist" class="waitlist">
+        <h2>Join the beta</h2>
+
+        <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
+          <input type="hidden" name="form-name" value="waitlist">
+          <p class="hidden">
+            <label>Don't fill this out: <input name="bot-field"></label>
+          </p>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="you@email.com" required>
+            <button type="submit" class="btn-primary">Join Waitlist</button>
+          </div>
+          <p class="form-note">Early access is limited. We'll onboard in small groups.</p>
+        </form>
+      </section>
     </main>
 
-    <section class="principles">
-        <h2>Core Principles</h2>
-        <div class="principle-grid">
-            <div class="principle">
-                <h3>Observer-Only</h3>
-                <p>Baseline observes and represents. It does not intervene, recommend, or steer.</p>
-            </div>
-            <div class="principle">
-                <h3>No Optimization</h3>
-                <p>Adaptation without objectives. Scaffolding without targets. Structure without steering.</p>
-            </div>
-            <div class="principle">
-                <h3>Behavior, Not Identity</h3>
-                <p>Signals are admissible. Profiles are not. The person is never the model.</p>
-            </div>
-            <div class="principle">
-                <h3>Categorical Refusals</h3>
-                <p>No personalization, no nudging, no persuasion, no claims of improvement.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>A <a href="https://compressedconsciousness.org">Compressed Consciousness</a> / <a href="https://zoaindustries.com">ZOA Industries</a> Research Initiative</p>
+    <footer>
+      <p>&copy; 2026 U0U BaseLine. Privacy-first by design.</p>
     </footer>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
