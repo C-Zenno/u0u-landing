@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://usebaseline.app/sitemap.xml
