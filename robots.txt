@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://usebaseline.app/sitemap.xml
+Sitemap: https://urbaseline.com/sitemap.xml
